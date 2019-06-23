@@ -1,0 +1,16 @@
+{
+  "name": "free_pomato_app_api",
+  "version": "1.0.0",
+  "description": "That is the backend server for free pomato app",
+  "main": "index.js",
+  "repository": "git@github.com:LDWinsky/free_pomato_app_api.git",
+  "author": "Ahole ahole.chan@gmail.com",
+  "license": "GPL",
+  "private": false,
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-logger": "^3.2.0",
+    "sequelize": "^5.8.12"
+  }
+}
