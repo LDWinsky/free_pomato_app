@@ -1,0 +1,10 @@
+port: 9876
+
+cookie_keys: ['secret', 'potomato']
+
+redis:
+  init_opts:
+    port: 6379
+    host: 127.0.0.1
+    maxRetriesPerRequest: 2
+  longest_reconnect_take: 3000
