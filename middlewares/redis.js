@@ -1,7 +1,8 @@
 const Redis = require('ioredis')
+const root = require('app-root-path')
 
-const getConfig = root.require('/helps/get.config')
-const config = getConfig('/configs/session.yml')
+const getConfig = root.require('/libs/get.config')
+const config = getConfig('/configs/config.yml')
 
 module.exports = () => {
   const redis = new Redis({
