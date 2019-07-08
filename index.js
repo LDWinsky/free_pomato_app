@@ -2,10 +2,11 @@ require('./environment')
 require('./error/handler')
 
 const Koa = require('koa')
+const bodyParser = require('koa-bodyparser')
 const redisConnect = require('./middlewares/redis')
-const mysqlConnect = require('./middlewares/mysql')
 const getConfig = require('./libs/get.config')
 const logger = require('./libs/logger')
+const routes = require('./routes')
 
 const config = getConfig('/configs/config.yml')
 const app = new Koa()
@@ -15,7 +16,12 @@ app.on('error', (e) => {
 })
 
 app.use(redisConnect())
-app.use(mysqlConnect())
+app.use(bodyParser({
+  onerror(err, ctx) {
+    ctx.throw('body parse error', 422)
+  },
+}))
+app.use(routes.routes())
 
 app.listen(config.port, (e) => {
   if (e) { throw e }

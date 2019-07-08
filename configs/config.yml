@@ -8,3 +8,14 @@ redis:
     host: 127.0.0.1
     maxRetriesPerRequest: 2
   longest_reconnect_take: 3000
+
+database:
+  database: 'pomatodo'
+  user: 'root'
+  password: 'Edison775800'
+  host: 'localhost'
+  dialect: 'mysql'
+  pool: 
+    max: 5
+    idle: 30000
+    acquire: 60000
